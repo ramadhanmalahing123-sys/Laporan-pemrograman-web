@@ -1,0 +1,64 @@
+<?php
+include 'Tugas_koneksi.php';
+
+$id = $_GET['id'];
+
+$data = mysqli_query($conn,"SELECT * FROM produk WHERE id_produk='$id'");
+$d = mysqli_fetch_array($data);
+
+if(isset($_POST['update'])){
+
+    $nama = $_POST['nama_produk'];
+    $harga = $_POST['harga'];
+    $stok = $_POST['stok'];
+
+    mysqli_query($conn,"UPDATE produk SET
+        nama_produk='$nama',
+        harga='$harga',
+        stok='$stok'
+        WHERE id_produk='$id'
+    ");
+
+    header("Location:Tugas_index.php");
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Produk</title>
+</head>
+<body>
+
+<h2>Edit Produk</h2>
+
+<form method="POST">
+
+Nama Produk <br>
+<input type="text" name="nama_produk"
+value="<?php echo $d['nama_produk']; ?>" required>
+
+<br><br>
+
+Harga <br>
+<input type="number" name="harga"
+value="<?php echo $d['harga']; ?>" required>
+
+<br><br>
+
+Stok <br>
+<input type="number" name="stok"
+value="<?php echo $d['stok']; ?>" required>
+
+<br><br>
+
+<input type="submit" name="update" value="Update">
+
+</form>
+
+<br>
+
+<a href="index.php">Kembali</a>
+
+</body>
+</html>
