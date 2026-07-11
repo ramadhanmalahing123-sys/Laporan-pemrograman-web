@@ -3,7 +3,7 @@
 ## Penjelasan
 
 ## Sourscode
-<?php
+```<?php
 include 'Tugas_koneksi.php';
 
 $id = $_GET['id'];
@@ -67,3 +67,4 @@ value="<?php echo $d['stok']; ?>" required>
 
 </body>
 </html>
+```
