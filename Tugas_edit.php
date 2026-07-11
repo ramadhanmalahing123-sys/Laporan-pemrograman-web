@@ -62,3 +62,6 @@ value="<?php echo $d['stok']; ?>" required>
 
 </body>
 </html>
+# Kode ini berfungsi untuk mengedit data produk pada tabel produk. Program mengambil data berdasarkan id_produk, 
+menampilkan data tersebut ke dalam form, kemudian menyimpan perubahan ke database menggunakan perintah UPDATE, 
+dan setelah berhasil akan mengarahkan pengguna kembali ke halaman Tugas_index.php.
